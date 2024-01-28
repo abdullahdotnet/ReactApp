@@ -1,17 +1,71 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+const BookList = () => {
+  return (
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  )
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
+}
+const Image = () => (
+  <img
+    src="https://m.media-amazon.com/images/I/91n7p-j5aqL._SY342_.jpg"
+    alt="House of flame and shadows"
+  />
+)
+const Title = () => <h2>House of flame and shadows</h2>
+const Author = () => <h4>Sarah j. Maas</h4>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<BookList />)
+
+// function Greeting() {
+//   return <h1>my first component</h1>
+// }
+
+// nesting
+// function Greeting() {
+//   return (
+//     <div>
+//       <Name />
+//       <Experience />
+//     </div>
+//   )
+// }
+
+// const Name = () => <h2>Abdullah</h2>
+// const Experience = () => {
+//   return <h2> 3 years</h2>
+//}
+// function Greeting() {
+//   return (
+//     <div>
+//       <h1>My First component</h1>
+//     </div>
+//   )
+// }
+// function Greeting() {
+//   return React.createElement('h1', {}, 'Hello World')
+// }
+
+// function Greeting() {
+//   return React.createElement(
+//     'div',
+//     {},
+//     React.createElement('h1', {}, 'Hello World')
+//   )
+// }
